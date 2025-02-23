@@ -6,14 +6,14 @@ local gui = Player:WaitForChild("PlayerGui")
 local screenGui = gui:WaitForChild("ScreenGui")
 
 -- Set Ultimate Attribute
-character:SetAttribute("UltimateName", "KAIOKEN TIMES FIVE HUNDRED")
+character:SetAttribute("UltimateName", "Now.. I'm ANGRY.")
 screenGui.MagicHealth.Health.Bar.Bar.ImageColor3 = Color3.fromRGB(222, 37, 37)
 
 local moves = {
-    ["Tri-Beam"] = {slot = 1, text = ""},
-    ["Angered Barrage"] = {slot = 2, text = ""},
-    ["Dodon Ray"] = {slot = 3, text = ""},
-    ["Uptilt"] = {slot = 4, text = ""},
+    ["0.15% Power Tri-Beam"] = {slot = 1, text = ""},
+    ["Held-back Fury"] = {slot = 2, text = ""},
+    ["0.19% Power Dodon Ray"] = {slot = 3, text = ""},
+    ["Upwards 0.02% Power Tri-Beam"] = {slot = 4, text = ""},
 }
 
 local ultNames = {
