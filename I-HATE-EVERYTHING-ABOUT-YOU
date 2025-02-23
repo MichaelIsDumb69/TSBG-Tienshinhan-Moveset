@@ -318,7 +318,11 @@ local blockedAnimations = {
     ["rbxassetid://10468665991"] = true,
     ["rbxassetid://10466974800"] = true,
     ["rbxassetid://10471336737"] = true,
-    ["rbxassetid://12510170988"] = true
+    ["rbxassetid://12510170988"] = true,
+    ["rbxassetid://10469493270"] = true,
+    ["rbxassetid://10469630950"] = true,
+    ["rbxassetid://10469639222"] = true,
+    [rbxassetid://10469643643"] = true
 }
 
 local function stopBlockedAnimations(character)
