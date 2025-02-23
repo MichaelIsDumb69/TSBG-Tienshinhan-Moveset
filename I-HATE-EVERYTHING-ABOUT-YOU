@@ -1,9 +1,6 @@
--- // Variables
-
-    -- // Services
     local Players = game:GetService("Players")
 
-        -- // Local variables
+        
         local Player = Players.LocalPlayer
             local character = Player.Character or Player.CharacterAdded:Wait()
             local root = character:WaitForChild("HumanoidRootPart")
@@ -12,22 +9,22 @@
             local gui = Player.PlayerGui
             local screenGui = gui.ScreenGui
 
-            -- // Attributes
+            
             local isUlted = character:GetAttribute("Ulted")
 
 
--- // End of variables
 
 
--- // Moves&ultimate
 
-    -- // Ultimate name
+
+
+    
     character:SetAttribute("UltimateName", "KAIOKEN TIMES FIVE HUNDRED")
 
-        -- // Ultimate color
+        
         screenGui.MagicHealth.Health.Bar.Bar.ImageColor3 = Color3.fromRGB(222, 37, 37)
 
-    -- // Move names
+    
     local moves = {
         ["Tri-Beam"] = {slot = 1, text = ""}, -- "text" is the text that's under the move name, e.g. "USE TWICE"
         ["Angered Barrage"] = {slot = 2, text = ""},
@@ -35,7 +32,7 @@
         ["Uptilt"] = {slot = 4, text = ""},
     }
 
-        -- // Ultimate move names
+        
         local ultNames = {
             ["RAGE COUNTER"] = {slot = 1, text = "Some text"},
             ["Move Name 2"] = {slot = 2, text = "Another text"},
@@ -43,9 +40,9 @@
             ["Move Name 4"] = {slot = 4, text = ""},
         }
 
--- // The functionality
 
-        -- // Update hotbar slots
+
+        
         local function setToolName(movetable)
             for name, data in pairs(movetable) do
                 local hotbarSlot = gui.Hotbar.Backpack.Hotbar:FindFirstChild(data.slot).Base
@@ -57,7 +54,6 @@
         end
 
             setToolName(moves)
-                -- // Set tool names after ult
                 character:GetAttributeChangedSignal("Ulted"):Connect(function()
                     if not isUlted then
                         task.wait()
@@ -65,7 +61,6 @@
                     end
                 end)
 
-                -- // Set tool names when using ult
                 Player.Backpack.ChildAdded:Connect(function(tool)
                     if tool.Name == "Death Counter" then -- [[Change this to an ult move of your character]]
                         task.wait()
@@ -73,36 +68,27 @@
                     end
                 end)
 
--- // End of moves&ultimate
 
-
--- // Move animations
-
-    -- // Choose the animations
-    local Idle = "13716964686" -- Replace with your animation id
+    local Idle = "13716964686" 
     local Walk = ""
 
-    local m1 = "13294471966" -- M1s
+    local m1 = "13294471966" 
     local m2 = "17889471098"
     local m3 = "16552234590"
     local m4 = "13378708199"
 
-    local Move1 = "18459215845" -- Normal moves
+    local Move1 = "18459215845"
     local Move2 = "12534735382"
     local Move3 = "13295936866"
     local Move4 = "95849504825"
 
-    local Ult = "113876851900426" -- Ultimate awakening
+    local Ult = "113876851900426" 
 
-    local UltMove1 = "140145728452253" -- Normal moves
+    local UltMove1 = "140145728452253" 
     local UltMove2 = "95849504825"
     local UltMove3 = "95849504825"
     local UltMove4 = "95849504825"
-    -- // End of choosing animations|
 
-        -- // The actual animations themselves
-
-            -- // Idle
             pcall(function() getgenv().Idle:Disconnect() end)
 
             getgenv().Idle = humanoid.AnimationPlayed:Connect(function(animationTrack)
@@ -116,7 +102,7 @@
                 end
             end)
 
-            -- // Walk
+            
             pcall(function() getgenv().Walk:Disconnect() end)
 
             getgenv().Walk = humanoid.AnimationPlayed:Connect(function(animationTrack)
@@ -130,7 +116,7 @@
                 end
             end)
 
-            -- // M1
+            
             pcall(function() getgenv().one:Disconnect() end)
 
             getgenv().one = humanoid.AnimationPlayed:Connect(function(animationTrack)
@@ -144,7 +130,7 @@
                 end
             end)
 
-            -- // M2
+            
             pcall(function() getgenv().two:Disconnect() end)
 
             getgenv().two = humanoid.AnimationPlayed:Connect(function(animationTrack)
@@ -158,7 +144,7 @@
                 end
             end)
 
-            -- // M3
+            
             pcall(function() getgenv().three:Disconnect() end)
 
             getgenv().three = humanoid.AnimationPlayed:Connect(function(animationTrack)
@@ -172,7 +158,7 @@
                 end
             end)
 
-            -- // M4
+            
             pcall(function() getgenv().four:Disconnect() end)
 
             getgenv().four = humanoid.AnimationPlayed:Connect(function(animationTrack)
@@ -186,7 +172,7 @@
                 end
             end)
 
-            -- // Move 1
+            
             pcall(function() getgenv().move1:Disconnect() end)
 
             getgenv().move1 = humanoid.AnimationPlayed:Connect(function(animationTrack)
@@ -200,7 +186,7 @@
                 end
             end)
 
-            -- // Move 2
+            
             pcall(function() getgenv().move2:Disconnect() end)
 
             getgenv().move2 = humanoid.AnimationPlayed:Connect(function(animationTrack)
@@ -215,7 +201,7 @@
             end)
 
 
-            -- // Move 3
+            
             pcall(function() getgenv().move3:Disconnect() end)
 
             getgenv().move3 = humanoid.AnimationPlayed:Connect(function(animationTrack)
@@ -229,7 +215,7 @@
                 end
             end)
 
-            -- // Move 4
+            
             pcall(function() getgenv().move4:Disconnect() end)
 
             getgenv().move4 = humanoid.AnimationPlayed:Connect(function(animationTrack)
@@ -243,7 +229,7 @@
                 end
             end)
 
-            -- // Ult awakening
+            
             pcall(function() getgenv().ult:Disconnect() end)
 
             getgenv().ult = humanoid.AnimationPlayed:Connect(function(animationTrack)
@@ -257,7 +243,7 @@
                 end
             end)
 
-            -- // Ult move 1
+            
             pcall(function() getgenv().ult:Disconnect() end)
 
             getgenv().ult = humanoid.AnimationPlayed:Connect(function(animationTrack)
@@ -271,7 +257,7 @@
                 end
             end)
 
-            -- // Ult move 2
+            
             pcall(function() getgenv().ult:Disconnect() end)
 
             getgenv().ult = humanoid.AnimationPlayed:Connect(function(animationTrack)
@@ -285,7 +271,7 @@
                 end
             end)
 
-            -- // Ult move 3
+            
             pcall(function() getgenv().ult:Disconnect() end)
 
             getgenv().ult = humanoid.AnimationPlayed:Connect(function(animationTrack)
@@ -299,7 +285,7 @@
                 end
             end)
 
-            -- // Ult move 4
+            
             pcall(function() getgenv().ult:Disconnect() end)
 
             getgenv().ult = humanoid.AnimationPlayed:Connect(function(animationTrack)
