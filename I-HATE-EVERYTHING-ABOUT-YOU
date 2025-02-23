@@ -10,17 +10,17 @@ character:SetAttribute("UltimateName", "Now.. I'm ANGRY.")
 screenGui.MagicHealth.Health.Bar.Bar.ImageColor3 = Color3.fromRGB(222, 37, 37)
 
 local moves = {
-    ["0.15% Power Tri-Beam"] = {slot = 1, text = ""},
-    ["Held-back Fury"] = {slot = 2, text = ""},
-    ["0.19% Power Dodon Ray"] = {slot = 3, text = ""},
-    ["Upwards 0.02% Power Tri-Beam"] = {slot = 4, text = ""},
+    ["Fractional Tri-Beam"] = {slot = 1, text = ""},
+    ["Restrained Wrath"] = {slot = 2, text = ""},
+    ["Piercing Photon"] = {slot = 3, text = ""},
+    ["Ascending Tri-Beam"] = {slot = 4, text = ""},
 }
 
 local ultNames = {
     ["RAGE COUNTER"] = {slot = 1, text = "Some text"},
-    ["Move Name 2"] = {slot = 2, text = "Another text"},
-    ["Move Name 3"] = {slot = 3, text = ""},
-    ["Move Name 4"] = {slot = 4, text = ""},
+    ["FULL-POWER TRI-FUCKING-BEAM!!"] = {slot = 2, text = "Another text"},
+    ['"THIS IS FOR CHIAOTZU! DODON RAY!!"'] = {slot = 3, text = ""},
+    ["idk what to name this"] = {slot = 4, text = ""},
 }
 
 local function setToolName(movetable)
