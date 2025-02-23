@@ -1,7 +1,7 @@
 -- // Variables
 
     -- // Services
-    local Players = game:GetService("Players")
+    local Players = game.Players.Wanwood6014799789851
 
         -- // Local variables
         local Player = Players.LocalPlayer
