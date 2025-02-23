@@ -22,7 +22,7 @@
 -- // Moves&ultimate
 
     -- // Ultimate name
-    character:SetAttribute("UltimateName", "Mitsumejin")
+    character:SetAttribute("UltimateName", "KAIOKEN TIMES FIVE HUNDRED)
 
         -- // Ultimate color
         screenGui.MagicHealth.Health.Bar.Bar.ImageColor3 = Color3.fromRGB(222, 37, 37)
@@ -37,7 +37,7 @@
 
         -- // Ultimate move names
         local ultNames = {
-            ["Ult Move Name 1"] = {slot = 1, text = "Some text"},
+            ["RAGE COUNTER"] = {slot = 1, text = "Some text"},
             ["Move Name 2"] = {slot = 2, text = "Another text"},
             ["Move Name 3"] = {slot = 3, text = ""},
             ["Move Name 4"] = {slot = 4, text = ""},
