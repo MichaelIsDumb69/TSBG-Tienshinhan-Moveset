@@ -80,7 +80,7 @@
 
     -- // Choose the animations
     local Idle = "13716964686" -- Replace with your animation id
-    local Walk = "95849504825"
+    local Walk = "15957361339"
 
     local m1 = "13294471966" -- M1s
     local m2 = "17889471098"
@@ -92,7 +92,7 @@
     local Move3 = "13295936866"
     local Move4 = "95849504825"
 
-    local Ult = "95849504825" -- Ultimate awakening
+    local Ult = "113876851900426" -- Ultimate awakening
 
     local UltMove1 = "140145728452253" -- Normal moves
     local UltMove2 = "95849504825"
