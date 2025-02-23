@@ -22,7 +22,7 @@
 -- // Moves&ultimate
 
     -- // Ultimate name
-    character:SetAttribute("UltimateName", "KAIOKEN TIMES FIVE HUNDRED)
+    character:SetAttribute("UltimateName", "KAIOKEN TIMES FIVE HUNDRED")
 
         -- // Ultimate color
         screenGui.MagicHealth.Health.Bar.Bar.ImageColor3 = Color3.fromRGB(222, 37, 37)
