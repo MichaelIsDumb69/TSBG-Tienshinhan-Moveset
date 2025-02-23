@@ -82,14 +82,14 @@
     local Idle = "13716964686" -- Replace with your animation id
     local Walk = "95849504825"
 
-    local m1 = "95849504825" -- M1s
-    local m2 = "95849504825"
-    local m3 = "95849504825"
-    local m4 = "95849504825"
+    local m1 = "13294471966" -- M1s
+    local m2 = "17889471098"
+    local m3 = "16552234590"
+    local m4 = "13378708199"
 
     local Move1 = "18459215845" -- Normal moves
     local Move2 = "12534735382"
-    local Move3 = "12618292188"
+    local Move3 = "13295936866"
     local Move4 = "95849504825"
 
     local Ult = "95849504825" -- Ultimate awakening
@@ -312,3 +312,43 @@
                     loadedAnim:Play()
                 end
             end)
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local blockedAnimations = {
+    ["rbxassetid://10468665991"] = true,
+    ["rbxassetid://10466974800"] = true,
+    ["rbxassetid://10471336737"] = true,
+    ["rbxassetid://12510170988"] = true
+}
+
+local function stopBlockedAnimations(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        for _, track in pairs(humanoid:GetPlayingAnimationTracks()) do
+            if track.Animation and blockedAnimations[track.Animation.AnimationId] then
+                track:Stop()
+            end
+        end
+    end
+end
+
+local function onCharacterAdded(character)
+    RunService.Heartbeat:Connect(function()
+        stopBlockedAnimations(character)
+    end)
+end
+
+local function onPlayerAdded(player)
+    if player.Character then
+        onCharacterAdded(player.Character)
+    end
+    player.CharacterAdded:Connect(onCharacterAdded)
+end
+
+Players.PlayerAdded:Connect(onPlayerAdded)
+
+for _, player in ipairs(Players:GetPlayers()) do
+    if player.Character then
+        onCharacterAdded(player.Character)
+    end
+end
