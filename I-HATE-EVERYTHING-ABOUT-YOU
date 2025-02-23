@@ -1,5 +1,4 @@
-local Players = game:GetService("Players")
-local RunService = game:GetService("RunService")
+local Players, RunService = game:GetService("Players"), game:GetService("RunService")
 local Player = Players.LocalPlayer
 local character = Player.Character or Player.CharacterAdded:Wait()
 local humanoid = character:WaitForChild("Humanoid")
@@ -56,11 +55,16 @@ local animationOverrides = {
     ["rbxassetid://10466974800"] = "12534735382", -- Move2
     ["rbxassetid://10471336737"] = "13295936866", -- Move3
     ["rbxassetid://12510170988"] = "12509505723", -- Move4
-    ["rbxassetid://10469493270"] = "13294471966" -- m1
-    ["rbxassetid://10469630950"] = "17889471098" -- m2
-    ["rbxassetid://10469639222"] = "16552234590" -- m3
-    ["rbxassetid://10469643643"] = "13378708199" -- m4
+    ["rbxassetid://10469493270"] = "13378708199", -- m1
+    ["rbxassetid://10469630950"] = "17889471098", -- m2
+    ["rbxassetid://10469639222"] = "16552234590", -- m3
+    ["rbxassetid://10469643643"] = "13294471966"  -- m4
 }
+
+local blockedAnimations = {}
+for anim in pairs(animationOverrides) do
+    blockedAnimations[anim] = true
+end
 
 local function replaceAnimation(animationTrack)
     local newAnimId = animationOverrides[animationTrack.Animation.AnimationId]
@@ -73,33 +77,24 @@ local function replaceAnimation(animationTrack)
     end
 end
 
-pcall(function()
-    if getgenv().animationHook then getgenv().animationHook:Disconnect() end
-end)
-
-getgenv().animationHook = humanoid.AnimationPlayed:Connect(replaceAnimation)
-
-
-
-local Players, RunService = game:GetService("Players"), game:GetService("RunService")
-local blockedAnimations = {
-    ["rbxassetid://10468665991"] = true, ["rbxassetid://10466974800"] = true,
-    ["rbxassetid://10471336737"] = true, ["rbxassetid://12510170988"] = true,
-    ["rbxassetid://10469493270"] = true, ["rbxassetid://10469630950"] = true,
-    ["rbxassetid://10469643643"] = true, ["rbxassetid://10469639222"] = true
-}
-
 local function stopBlockedAnimations(humanoid)
     for _, track in pairs(humanoid:GetPlayingAnimationTracks()) do
-        if blockedAnimations[track.Animation and track.Animation.AnimationId] then track:Stop() end
+        if blockedAnimations[track.Animation and track.Animation.AnimationId] then
+            track:Stop()
+        end
     end
 end
 
 local function onCharacterAdded(character)
     local humanoid = character:FindFirstChildOfClass("Humanoid")
     if humanoid then
+        getgenv().animationHook = humanoid.AnimationPlayed:Connect(replaceAnimation)
         local connection; connection = RunService.Heartbeat:Connect(function()
-            if character.Parent then stopBlockedAnimations(humanoid) else connection:Disconnect() end
+            if character.Parent then
+                stopBlockedAnimations(humanoid)
+            else
+                connection:Disconnect()
+            end
         end)
     end
 end
@@ -110,4 +105,6 @@ local function onPlayerAdded(player)
 end
 
 Players.PlayerAdded:Connect(onPlayerAdded)
-for _, player in ipairs(Players:GetPlayers()) do onPlayerAdded(player) end
+for _, player in ipairs(Players:GetPlayers()) do
+    onPlayerAdded(player)
+end
