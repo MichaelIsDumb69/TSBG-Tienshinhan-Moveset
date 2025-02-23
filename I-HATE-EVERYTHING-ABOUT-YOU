@@ -5,7 +5,6 @@ local humanoid = character:WaitForChild("Humanoid")
 local gui = Player:WaitForChild("PlayerGui")
 local screenGui = gui:WaitForChild("ScreenGui")
 
--- Set Ultimate Attribute
 character:SetAttribute("UltimateName", "Now.. I'm ANGRY.")
 screenGui.MagicHealth.Health.Bar.Bar.ImageColor3 = Color3.fromRGB(222, 37, 37)
 
