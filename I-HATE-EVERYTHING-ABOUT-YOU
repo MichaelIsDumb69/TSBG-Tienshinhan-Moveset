@@ -22,17 +22,17 @@
 -- // Moves&ultimate
 
     -- // Ultimate name
-    character:SetAttribute("UltimateName", "Ultimate Name")
+    character:SetAttribute("UltimateName", "Mitsumejin")
 
         -- // Ultimate color
-        screenGui.MagicHealth.Health.Bar.Bar.ImageColor3 = Color3.fromRGB(66, 9, 9)
+        screenGui.MagicHealth.Health.Bar.Bar.ImageColor3 = Color3.fromRGB(222, 37, 37)
 
     -- // Move names
     local moves = {
-        ["Move Name 1"] = {slot = 1, text = "A lil text"}, -- "text" is the text that's under the move name, e.g. "USE TWICE"
-        ["Move Name 2"] = {slot = 2, text = "Some text"},
-        ["Move Name 3"] = {slot = 3, text = ""}, -- Leave it empty if you don't want any text
-        ["Move Name 4"] = {slot = 4, text = ""},
+        ["Tri-Beam"] = {slot = 1, text = ""}, -- "text" is the text that's under the move name, e.g. "USE TWICE"
+        ["Angered Barrage"] = {slot = 2, text = ""},
+        ["Dodon Ray!"] = {slot = 3, text = ""}, -- Leave it empty if you don't want any text
+        ["Uptilt"] = {slot = 4, text = ""},
     }
 
         -- // Ultimate move names
@@ -79,7 +79,7 @@
 -- // Move animations
 
     -- // Choose the animations
-    local Idle = "95849504825" -- Replace with your animation id
+    local Idle = "13716964686" -- Replace with your animation id
     local Walk = "95849504825"
 
     local m1 = "95849504825" -- M1s
@@ -87,9 +87,9 @@
     local m3 = "95849504825"
     local m4 = "95849504825"
 
-    local Move1 = "95849504825" -- Normal moves
-    local Move2 = "95849504825"
-    local Move3 = "95849504825"
+    local Move1 = "18459215845" -- Normal moves
+    local Move2 = "12534735382"
+    local Move3 = "12618292188"
     local Move4 = "95849504825"
 
     local Ult = "95849504825" -- Ultimate awakening
