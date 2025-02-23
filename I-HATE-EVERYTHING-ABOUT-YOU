@@ -80,7 +80,7 @@
 
     -- // Choose the animations
     local Idle = "13716964686" -- Replace with your animation id
-    local Walk = "15957361339"
+    local Walk = ""
 
     local m1 = "13294471966" -- M1s
     local m2 = "17889471098"
@@ -311,7 +311,8 @@
                     loadedAnim.Priority = Enum.AnimationPriority.Action2
                     loadedAnim:Play()
                 end
-            end)
+          end)
+
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local blockedAnimations = {
@@ -355,4 +356,4 @@ for _, player in ipairs(Players:GetPlayers()) do
     if player.Character then
         onCharacterAdded(player.Character)
     end
-end
+end)
