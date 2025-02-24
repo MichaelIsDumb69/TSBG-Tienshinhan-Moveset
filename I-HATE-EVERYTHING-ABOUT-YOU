@@ -49,7 +49,7 @@ Player.Backpack.ChildAdded:Connect(function(tool)
 end)
 
 local animationOverrides = {
-    ["rbxassetid://10469493270"] = "13716964686", -- Idle
+    ["rbxassetid://10469493270"] = "13716964686", -- Idle (doesn't work rn lol)
     ["rbxassetid://10468665991"] = "18459215845", -- Move1
     ["rbxassetid://10466974800"] = "12534735382", -- Move2
     ["rbxassetid://10471336737"] = "13295936866", -- Move3
