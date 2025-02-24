@@ -5,19 +5,19 @@ local humanoid = character:WaitForChild("Humanoid")
 local gui = Player:WaitForChild("PlayerGui")
 local screenGui = gui:WaitForChild("ScreenGui")
 
-character:SetAttribute("UltimateName", "Now.. I'm ANGRY.")
+character:SetAttribute("UltimateName", "KAI-O-KEN TIMES FIVE HUNDRED!!")
 screenGui.MagicHealth.Health.Bar.Bar.ImageColor3 = Color3.fromRGB(222, 37, 37)
 
 local moves = {
-    ["Fractional Tri-Beam"] = {slot = 1, text = ""},
-    ["Restrained Wrath"] = {slot = 2, text = ""},
-    ["Piercing Photon"] = {slot = 3, text = ""},
-    ["Ascending Tri-Beam"] = {slot = 4, text = ""},
+    ["Fractional Tri-Beam"] = {slot = 1, text = "0.15% Power"},
+    ["Restrained Wrath"] = {slot = 2, text = "0.07% Power"},
+    ["Piercing Dodon"] = {slot = 3, text = "0.23% Power"},
+    ["Ascending Tri-Beam"] = {slot = 4, text = "0.09% Power"},
 }
 -- ULTIMATES AREN'T DONE
 local ultNames = {
-    ["RAGE COUNTER"] = {slot = 1, text = "Some text"},
-    ["FULL-POWER TRI-FUCKING-BEAM!!"] = {slot = 2, text = "Another text"},
+    ["RAGE COUNTER"] = {slot = 1, text = "(death counter)"},
+    ["FULL-POWER TRI-FUCKING-BEAM!!"] = {slot = 2, text = ""},
     ['"THIS IS FOR CHIAOTZU! DODON RAY!!"'] = {slot = 3, text = ""},
     ["idk what to name this"] = {slot = 4, text = ""},
 }
@@ -54,10 +54,10 @@ local animationOverrides = {
     ["rbxassetid://10466974800"] = "12534735382", -- Move2
     ["rbxassetid://10471336737"] = "13295936866", -- Move3
     ["rbxassetid://12510170988"] = "12509505723", -- Move4
-    ["rbxassetid://10469493270"] = "13378708199", -- m1
-    ["rbxassetid://10469630950"] = "17889471098", -- m2
-    ["rbxassetid://10469639222"] = "16552234590", -- m3
-    ["rbxassetid://10469643643"] = "13294471966"  -- m4
+    ["rbxassetid://10469493270"] = "13378708199", -- punch1
+    ["rbxassetid://10469630950"] = "17889471098", -- punch2
+    ["rbxassetid://10469639222"] = "16552234590", -- punch3
+    ["rbxassetid://10469643643"] = "13294471966"  -- punch4
 }
 
 local blockedAnimations = {}
