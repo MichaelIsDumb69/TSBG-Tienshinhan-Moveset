@@ -14,7 +14,7 @@ local moves = {
     ["Piercing Photon"] = {slot = 3, text = ""},
     ["Ascending Tri-Beam"] = {slot = 4, text = ""},
 }
-
+-- ULTIMATES AREN'T DONE
 local ultNames = {
     ["RAGE COUNTER"] = {slot = 1, text = "Some text"},
     ["FULL-POWER TRI-FUCKING-BEAM!!"] = {slot = 2, text = "Another text"},
